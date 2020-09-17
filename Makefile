@@ -14,6 +14,24 @@ develop: ## setup project for development
 	git config --global user.email "kishiyama.t@gmail"
 	sudo apt install git-lfs
 
+develop-root: ## setup project for development
+	apt update && apt upgrade -y
+	apt install build-essential -y # includes gcc
+	apt install libxml2-dev libcurl4-openssl-dev libssl-dev -y
+	apt install vim -y
+	apt install tmux -y
+	# https://gist.github.com/TallSmile/681cc100fb06c25b25e1b21223798548
+	# Install latest g++ and clang
+	# sudo apt-get install gcc # https://linuxize.com/post/how-to-install-gcc-compiler-on-ubuntu-18-04/
+	apt install clang -y
+	apt install curl -y
+	apt install screen -y
+	git config --global user.name "Takeshi Kishiyama"
+	git config --global user.email "kishiyama.t@gmail"
+	# apt install git-lfs
+	curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+	apt-get install git-lfs
+
 dotfiles: ## setup symbolic links. you need to login again to make these setting available.
 	# git
 	ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
@@ -30,7 +48,7 @@ dotfiles: ## setup symbolic links. you need to login again to make these setting
 	ln -sf ~/dotfiles/.inputrc ~/.inputrc
 	# vim
 	ln -sf ~/dotfiles/.vimrc ~/.vimrc
-	ln -sf ~/dotfiles/.vim/ ~/.vim
+	# ln -sf ~/dotfiles/.vim/ ~/.vim  # もう存在しない
 	# tmux
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
