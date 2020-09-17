@@ -1,0 +1,42 @@
+[user]
+	email = kishiyama.t@gmail.com
+	name = Takeshi KISHIYAMA
+
+[alias]
+	s = status
+	ss = status -s
+	c = commit # vim を開くから cv
+	cm = commit -m
+	ca = commit --amend
+	cam = commit -a -m
+	cv = commit -v
+	co = checkout
+	cob = checkout -b
+	b = branch
+	a = add
+	aa = add .
+	po = push origin
+	pom = push origin master
+	l = pull
+	lo = pull origin
+	d = diff
+	lg = log
+	lgog = log --oneline --graph
+	ri = rebase -i
+	rc = rebase --continue  # rebase -i の eからの復帰が楽
+	# https://stackoverflow.com/questions/957928/
+	# is-there-a-way-to-get-the-git-root-directory-in-one-command
+	root = rev-parse --show-toplevel  # git root | cd で git root に移動
+
+[core]
+	whitespace = cr-at-eol
+	editor = vim
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[push]
+	default = simple
