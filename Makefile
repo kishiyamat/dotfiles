@@ -56,7 +56,7 @@ docker:
 	curl https://get.docker.com > /tmp/install.sh
 	chmod +x /tmp/install.sh
 	/tmp/install.sh
-	sudo usermod -aG docker $USER
+	sudo usermod -aG docker `echo $USER`  # これは上手く行かないはず
 
 pandoc: 
 	sudo apt-get install pandoc -y # Rmarkdownのhtml出力のため
