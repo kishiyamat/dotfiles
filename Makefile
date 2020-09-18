@@ -13,6 +13,15 @@ develop: ## setup project for development
 	git config --global user.name "Takeshi Kishiyama"
 	git config --global user.email "kishiyama.t@gmail"
 	sudo apt install git-lfs
+	sudo yum install -y docker          # dockerのインストール
+	sudo service docker start           # dockerの起動
+	sudo usermod -a -G docker ec2-user  # ec2-userをdockerグルー
+	# 既にDockerが入ってた場合はめんど差異ことになるなぁ
+	# https://qiita.com/y-do/items/e127211b32296d65803a
+	sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose
+	# sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+	docker-compose --version
 
 develop-root: ## setup project for development
 	apt update && apt upgrade -y
@@ -51,12 +60,6 @@ dotfiles: ## setup symbolic links. you need to login again to make these setting
 	# ln -sf ~/dotfiles/.vim/ ~/.vim  # もう存在しない
 	# tmux
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-
-docker:
-	curl https://get.docker.com > /tmp/install.sh
-	chmod +x /tmp/install.sh
-	/tmp/install.sh
-	sudo usermod -aG docker `echo $USER`  # これは上手く行かないはず
 
 pandoc: 
 	sudo apt-get install pandoc -y # Rmarkdownのhtml出力のため
