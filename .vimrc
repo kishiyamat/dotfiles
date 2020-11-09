@@ -144,6 +144,11 @@ nnoremap - <C-x>
 
 " 行末までのヤンクにする設定; DやCに合わせる
 nnoremap Y y$
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 
 " 参考資料
 " https://www.youtube.com/watch?v=XA2WjJbmmoM
