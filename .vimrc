@@ -144,6 +144,7 @@ nnoremap - <C-x>
 
 " 行末までのヤンクにする設定; DやCに合わせる
 nnoremap Y y$
+" https://stackoverflow.com/questions/17561706/vim-yank-does-not-seem-to-work
 if system('uname -s') == "Darwin\n"
   set clipboard=unnamed "OSX
 else
