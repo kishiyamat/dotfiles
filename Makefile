@@ -34,6 +34,8 @@ develop-root: ## setup project for development
 
 dotfiles: ## setup symbolic links. you need to login again to make these setting available.
 	# git
+	git config --global user.name "Takeshi Kishiyama"
+	git config --global user.email "kishiyama.t@gmail"
 	ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 	## https://qiita.com/varmil/items/9b0aeafa85975474e9b6
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/.git-prompt.sh
