@@ -62,7 +62,7 @@ set wildmenu
 
 " UI
 " syntax on
-colo pablo
+colorscheme delek
 set ruler
 set number
 " Syntax
