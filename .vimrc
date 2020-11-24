@@ -49,7 +49,6 @@ endif
 set nocompatible  " to vi
 syntax enable
 filetype plugin on
-autocmd! bufreadpost *.Rmd set syntax=off
 
 " Fuzzy File Search with tab completion
 set path+=**  " recursive search
