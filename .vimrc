@@ -10,6 +10,9 @@
 " BASIC SETUP
 "******************************************************************************
 
+" Move
+set mouse=a
+
 " Encoding
 set encoding=utf-8
 scriptencoding utf-8
