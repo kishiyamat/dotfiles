@@ -50,7 +50,6 @@ endif
 "******************************************************************************
 
 set nocompatible  " to vi
-syntax enable
 filetype plugin on
 
 " Fuzzy File Search with tab completion
@@ -64,10 +63,20 @@ set wildmenu
 "******************************************************************************
 
 " UI
-" syntax on
+syntax on
 colorscheme delek
 set ruler
 set number
+
+" https://stackoverflow.com/questions/32865744/vim-syntax-and-latex-math-inside-markdown
+" This gets rid of the nasty _ italic bug in tpope's vim-markdown
+" block $$...$$
+syn region math start=/\$\$/ end=/\$\$/
+" inline math
+syn match math '\$[^$].\{-}\$'
+" actually highlight the region we defined as "math"
+hi link math Statement
+
 " Syntax
 set showmatch                   " 対応する括弧に一瞬カーソル飛ぶ
 set matchtime=1                 " マッチしている括弧を表示するための時間を0.1秒単位で指定
