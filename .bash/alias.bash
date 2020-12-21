@@ -94,6 +94,7 @@ alias l='ls -CF'
 alias ll='ls -alF'
 alias la='ls -A'
 alias lx='ls -X'
+alias lt='ls -t'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

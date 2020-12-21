@@ -18,3 +18,8 @@ fi
 
 export PATH=$HOME/.poetry/bin:$PATH
 export PATH=/Users/takeshi.kishiyama/.poetry/bin:/Users/takeshi.kishiyama/.pyenv/shims:/Users/takeshi.kishiyama/.pyenv/bin:/Users/takeshi.kishiyama/.poetry/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
+# Install Ruby Gems to ~/gems  
+# jekyll の時に必要 
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
