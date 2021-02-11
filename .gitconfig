@@ -21,7 +21,7 @@
 	lo = pull origin
 	d = diff
 	lg = log
-	lgog = log --oneline --graph
+	lgg = log --oneline --graph
 	ri = rebase -i
 	rc = rebase --continue  # rebase -i の eからの復帰が楽
 	# https://stackoverflow.com/questions/957928/
