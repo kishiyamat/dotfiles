@@ -27,6 +27,8 @@
 	# https://stackoverflow.com/questions/957928/
 	# is-there-a-way-to-get-the-git-root-directory-in-one-command
 	root = rev-parse --show-toplevel  # git root | cd で git root に移動
+	sinit = submodule init
+	supdate = submodule update
 
 [core]
 	whitespace = cr-at-eol
