@@ -13,8 +13,8 @@
 	co = checkout
 	cob = checkout -b
 	b = branch
-	a = add
-	aa = add .
+	a = add --verbose
+	aa = add . --verbose
 	po = push origin
 	pom = push origin master
 	l = pull
