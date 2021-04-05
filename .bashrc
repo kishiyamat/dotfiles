@@ -41,3 +41,18 @@ _direnv_hook() {
 if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
   PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
 fi
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+export PATH=/home/ubuntu/.poetry/bin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/home/ubuntu/gems/bin:/Users/takeshi.kishiyama/.poetry/bin:/Users/takeshi.kishiyama/.pyenv/shims:/Users/takeshi.kishiyama/.pyenv/bin:/Users/takeshi.kishiyama/.poetry/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+eval 
+_direnv_hook() {
+  local previous_exit_status=$?;
+  eval "$(direnv export bash)";
+  return $previous_exit_status;
+};
+if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
+  PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
+fi
