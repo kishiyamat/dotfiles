@@ -175,3 +175,9 @@ alias sd='screen -d'
 
 # SCREEN SETTING
 alias dc='docker-compose'
+
+# xclip
+alias lpbcopy='xclip -selection clipboard'
+alias lpbpaste='xclip -selection clipboard -o'
+
+alias lssh="cat $HOME/.ssh/config  | grep '^Host' | sed 's/Host //'"
