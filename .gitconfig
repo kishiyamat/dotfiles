@@ -33,6 +33,7 @@
 [core]
 	whitespace = cr-at-eol
 	editor = vim
+	excludesFile = /Users/takeshi.kishiyama/.gitignore_global
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
