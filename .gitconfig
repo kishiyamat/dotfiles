@@ -3,27 +3,28 @@
 	name = Takeshi KISHIYAMA
 
 [alias]
-	s = status
-	ss = status -s
+	a = add --verbose  # 事故防止: 名前は確認しよう
+	aa = add . --verbose
+	b = branch
 	c = commit # vim を開くから cv
-	cm = commit -m
 	ca = commit --amend
 	cam = commit -a -m
-	cv = commit -v
+	cm = commit -m
 	co = checkout
 	cob = checkout -b
-	b = branch
-	a = add --verbose
-	aa = add . --verbose
-	po = push origin
-	pom = push origin master
+	cv = commit -v
+	d = diff
+	dn = diff --name-only
 	l = pull
 	lo = pull origin
-	d = diff
 	lg = log
 	lgg = log --oneline --graph
+	po = push origin
+	pom = push origin master
 	ri = rebase -i
 	rc = rebase --continue  # rebase -i の eからの復帰が楽
+	s = status
+	ss = status -s
 	# https://stackoverflow.com/questions/957928/
 	# is-there-a-way-to-get-the-git-root-directory-in-one-command
 	root = rev-parse --show-toplevel  # git root | cd で git root に移動
