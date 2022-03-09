@@ -15,6 +15,7 @@
 	cv = commit -v
 	d = diff
 	dn = diff --name-only
+	dw = diff --word-diff
 	l = pull
 	lo = pull origin
 	lg = log
