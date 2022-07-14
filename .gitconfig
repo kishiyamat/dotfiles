@@ -6,6 +6,7 @@
 	a = add --verbose  # 事故防止: 名前は確認しよう
 	aa = add . --verbose
 	b = branch
+	bd = branch -d
 	c = commit # vim を開くから cv
 	ca = commit --amend
 	cam = commit -a -m
