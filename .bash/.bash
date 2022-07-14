@@ -1,0 +1,1 @@
+/Users/takeshi.kishiyama/dotfiles/.bash

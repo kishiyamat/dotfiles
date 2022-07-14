@@ -21,3 +21,6 @@ fi
 export LLVM_CONFIG=/usr/local/Cellar/llvm@11/11.1.0_2/bin/llvm-config
 export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.1
