@@ -20,3 +20,14 @@ Dotfilesからは排除されます。
 1. Dotfilesをクローンし
    `make develop` から
    `make dotfiles` を実行
+
+# Windows
+
+基本的にはold-Readmeを参照するが、
+以下を実施できれば大体はよい。
+WSLやVSCodeを接続するとさらに良い。
+
+- UR配列設定
+- caps lock -> ctrl
+- ctrl-space で言語の切り替え
+   
