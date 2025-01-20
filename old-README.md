@@ -87,7 +87,20 @@ bios起動、起動方法でUSBを選択...という
 * Python(CoreNLPが通るのが条件)
     * `make python` で導入。pipが通るようにはなる。
     * 個人的にはpyenvの利用をおすすめする。開発対象のソフトのruntimeやrequirementsなどを参照し、
-      pyenvのlocalで適切なバージョンのpython環境を用意するのが丁寧
+      pyenvのlocalで適切なバージョンのpython環境を用意するのが丁寧.
+      インストールしている途中でエラーになることもあるが、その場合はログを見る。
+      ```sh
+      +kishiyamat@kishiyamat-XPS-13-9300:~/kikoepred (main =) $ cat /tmp/python-build.20250120135709.21324.log
+      ```
+      のようにすれば、ログがあるはず。そこでコケている原因を特定する。今回の場合は
+      ```sh
+      ModuleNotFoundError: No module named 'zlib'
+      ```
+      となっていた。
+      あとはprerequisitesも参照したい。これはReadmeに書いておいてほしいものだが...。
+      https://github.com/pyenv/pyenv/wiki/Common-build-problems#prerequisites
+      結局、zlibの入れ方をググってオラクルのサイトを参照してインストールした。
+      よくわらかないまとめサイトも出てくるが、基本的には避けるのが吉。
 * Pandoc(makeで入る)
 * RStudio/Server(ローカルに導入. TODO: make local; make remoteみたいにする?)
 * TeX(現段階は不要.)
@@ -100,6 +113,8 @@ bios起動、起動方法でUSBを選択...という
 参考
 
 * [Terminal-based Working Environments](https://hpcc.ucr.edu/manuals_linux-cluster_terminalIDE.html)
+
+
 
 
 ## ハード設定
