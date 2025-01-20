@@ -64,7 +64,7 @@ bios起動、起動方法でUSBを選択...という
    ```shell
    $ git clone https://gitlab.com/kishiyamat/dotfiles.git
    $ cd dotfiles
-   $ make develop   # 必要なコンパイラ, VimやGitなどを導入
+   $ make develop   # 必要なコンパイラ, VimやGitなどを導入. tmuxでエラーになるかもしれないがもう一回やると通るかも
    $ make dotfiles  # シンボリックリンクを導入
    ``` 
 

@@ -53,6 +53,7 @@ dotfiles: ## setup symbolic links. you need to login again to make these setting
 	# ln -sf ~/dotfiles/.vim/ ~/.vim  # もう存在しない
 	# tmux
 	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+	# 最後に`$ bash`すればいいのに
 
 pandoc: 
 	sudo apt-get install pandoc -y # Rmarkdownのhtml出力のため
