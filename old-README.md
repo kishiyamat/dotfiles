@@ -114,8 +114,94 @@ bios起動、起動方法でUSBを選択...という
 
 * [Terminal-based Working Environments](https://hpcc.ucr.edu/manuals_linux-cluster_terminalIDE.html)
 
+## Python追記
+
+ModuleNotFoundError: No module named '_bz2'
+ModuleNotFoundError: No module named 'readline'
+ModuleNotFoundError: No module named '_sqlite3'
+ModuleNotFoundError: No module named '_tkinter'
+ModuleNotFoundError: No module named '_lzma'
+```
 
 
+pyenvをインストールしようとしてたら、以下のようなWarningが出ていた。
+```shell
+Downloading Python-3.10.13.tar.xz...
+-> https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tar.xz
+Installing Python-3.10.13...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/kishiyamat/.pyenv/versions/3.10.13/lib/python3.10/bz2.py", line 17, in <module>
+    from _bz2 import BZ2Compressor, BZ2Decompressor
+ModuleNotFoundError: No module named '_bz2'
+WARNING: The Python bz2 extension was not compiled. Missing the bzip2 lib?
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'readline'
+WARNING: The Python readline extension was not compiled. Missing the GNU readline lib?
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/kishiyamat/.pyenv/versions/3.10.13/lib/python3.10/sqlite3/__init__.py", line 57, in <module>
+    from sqlite3.dbapi2 import *
+  File "/home/kishiyamat/.pyenv/versions/3.10.13/lib/python3.10/sqlite3/dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ModuleNotFoundError: No module named '_sqlite3'
+WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/kishiyamat/.pyenv/versions/3.10.13/lib/python3.10/tkinter/__init__.py", line 37, in <module>
+    import _tkinter # If this fails your Python may not be configured for Tk
+ModuleNotFoundError: No module named '_tkinter'
+WARNING: The Python tkinter extension was not compiled and GUI subsystem has been detected. Missing the Tk toolkit?
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/kishiyamat/.pyenv/versions/3.10.13/lib/python3.10/lzma.py", line 27, in <module>
+    from _lzma import *
+ModuleNotFoundError: No module named '_lzma'
+WARNING: The Python lzma extension was not compiled. Missing the lzma lib?
+Installed Python-3.10.13 to /home/kishiyamat/.pyenv/versions/3.10.13
++kishiyamat@kishiyamat-XPS-13-9300:~/kikoepred (main =) $
+```
+
+この中の
+```py
+ModuleNotFoundError: No module named '_bz2'
+```
+に関しては
+```sh
+sudo apt-get install libbz2-dev
+```
+で良さそう。
+
+```py
+ModuleNotFoundError: No module named '_lzma'
+```
+
+もある。
+
+これは
+```sh
+sudo apt install liblzma-dev
+```
+
+この調子だと、全部入れておいたほうがいい。
+
+ModuleNotFoundError: No module named '_bz2'
+ModuleNotFoundError: No module named 'readline'
+ModuleNotFoundError: No module named '_sqlite3'
+ModuleNotFoundError: No module named '_tkinter'
+ModuleNotFoundError: No module named '_lzma'
+
+に対してすべて入れておく
+
+sudo apt-get install libbz2-dev
+sudo apt install libreadline-dev
+sudo apt-get install sqlite3 libsqlite3-dev
+sudo apt-get install python3-tk
+sudo apt install liblzma-dev
+
+ただ、tkの方は結局解決ができなかった。
+現在開発中のアプリでは問題ないので、問題がでたらインストールする
 
 ## ハード設定
 
