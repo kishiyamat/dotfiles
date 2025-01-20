@@ -181,3 +181,19 @@ alias lpbcopy='xclip -selection clipboard'
 alias lpbpaste='xclip -selection clipboard -o'
 
 alias lssh="cat $HOME/.ssh/config  | grep '^Host' | sed 's/Host //'"
+
+
+# 2025/01/20 bashの設定を追加
+# https://github.com/pyenv/pyenv?tab=readme-ov-file#linuxunix 
+# Load pyenv automatically by appending
+# the following to 
+# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+# and ~/.bashrc (for interactive shells) :
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+# Restart your shell for the changes to take effect.
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+eval "$(pyenv virtualenv-init -)"
+
