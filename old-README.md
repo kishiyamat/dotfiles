@@ -86,6 +86,8 @@ bios起動、起動方法でUSBを選択...という
     ```
 * Python(CoreNLPが通るのが条件)
     * `make python` で導入。pipが通るようにはなる。
+    * 個人的にはpyenvの利用をおすすめする。開発対象のソフトのruntimeやrequirementsなどを参照し、
+      pyenvのlocalで適切なバージョンのpython環境を用意するのが丁寧
 * Pandoc(makeで入る)
 * RStudio/Server(ローカルに導入. TODO: make local; make remoteみたいにする?)
 * TeX(現段階は不要.)
