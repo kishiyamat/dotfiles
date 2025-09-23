@@ -64,7 +64,7 @@ set wildmenu
 
 " UI
 syntax on
-colorscheme delek
+" colorscheme molokai
 set ruler
 set number
 
