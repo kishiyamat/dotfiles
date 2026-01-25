@@ -28,3 +28,4 @@ eval "$(pyenv init - bash)"
 # the following to ~/.bashrc:
 
 eval "$(pyenv virtualenv-init -)"
+export MECABRC=/etc/mecabrc
